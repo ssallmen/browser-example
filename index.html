@@ -1,91 +1,153 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {background-color: powderblue;}
-.maincontent {visibility: hidden;}
-.active {visibility: hidden;}
-.slds-form-element {visibility: hidden;}
-.slds-form-element__label {font-weight: bold; visibility: visible;}
-.slds-form-element__control {visibility: hidden;}
-select {visibility: visible;}
-option {visibility: visible;}
-textarea {visibility: visible;}
-input {visibility: visible;}
-abbr[title="required"] {color: red;}
-</style>
-</head>
+  <head>
+    <style>
+      body {background-color: powderblue;}
+      /* .maincontent {visibility: hidden;}
+      .active {visibility: hidden;}
+      .slds-form-element {visibility: hidden;} */
+      .slds-form-element__label {font-weight: bold;}
+      /* .slds-form-element__label {font-weight: bold; visibility: visible;}
+      .slds-form-element__control {visibility: hidden;}
+      select {visibility: visible;}
+      option {visibility: visible;}
+      textarea {visibility: visible;}
+      input {visibility: visible;} */
+      abbr[title="required"] {color: red;}
+      .slds-is-open>.slds-accordion__content {
+        overflow: visible;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+      }
+      .slds-select_container {
+        position: relative;
+        color: var(--sds-c-select-text-color);
+      }
+      button, input, optgroup, select, textarea {
+        color: inherit;
+        font: inherit;
+        margin: 0;
+      }
+      button, select {
+        text-transform: none;
+      }
+      .slds-select {
+        height: calc(var(--lwc-heightInput,1.875rem) + (var(--lwc-borderWidthThin,1px) * 2));
+        width: 100%;
+        border: var(--lwc-borderWidthThin,1px) solid var(--slds-c-select-color-border, var(--sds-c-select-color-border, var(--lwc-colorBorderInput,rgb(201, 201, 201))));
+        border-radius: var(--slds-c-select-radius-border, var(--sds-c-select-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+        background-color: var(--slds-c-select-color-background, var(--sds-c-select-color-background, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))));
+        color: var(--slds-c-select-text-color, var(--sds-c-select-text-color));
+        box-shadow: var(--slds-c-select-shadow, var(--sds-c-select-shadow));
+        transition: border var(--lwc-durationQuickly,0.1s) linear,background-color var(--lwc-durationQuickly,0.1s) linear;
+      }
+      .slds-select:required {
+        box-shadow: none;
+      }
+      .slds-select_container .slds-select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding-left: var(--lwc-spacingXSmall,0.5rem);
+        padding-right: var(--lwc-spacingLarge,1.5rem);
+      }
+      .slds-select_container:before, .slds-select_container:after {
+          position: absolute;
+          content: '';
+          display: block;
+          right: var(--lwc-spacingXSmall,0.5rem);
+          width: 0;
+          height: 0;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          pointer-events: none;
+      }
+      *, *:before, *:after {
+        box-sizing: border-box;
+      }
+      ::selection {
+        background: var(--lwc-colorBackgroundSelection,rgb(216, 230, 254));
+        text-shadow: none;
+        color: var(--lwc-colorTextDefault,rgb(24, 24, 24));
+      }
+    </style>
+  </head>
 
-<body>
-  <div class="maincontent">
-    <div class="oneContent active">
-      This is the first form
-      <form name="first">
-        <div class="slds-form-element">
-          <label class="slds-form-element__label">
-            <abbr title="required">*</abbr>
-            Text input
-          </label>
-          <div class="slds-form-element__control">
-            <input type="text" value="Foobar" required>
-          </div>
-        </div>
-        <div class="slds-form-element">
-          <label class="slds-form-element__label">Text area</label>
-          <div class="slds-form-element__control">
-            <textarea type="text">dipitisipiti daa daa
+  <body>
+    <div class="maincontent">
+      <div class="oneContent active">
+        <div class="slds-accordion__content slds-is-open">
+          This is the first form
+          <form name="first">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label">
+                <abbr title="required">*</abbr>
+                Text input
+              </label>
+              <div class="slds-form-element__control">
+                <input type="text" value="Foobar" required>
+              </div>
+            </div>
+            <div class="slds-form-element">
+              <label class="slds-form-element__label">Text area</label>
+              <div class="slds-form-element__control">
+                <textarea type="text">dipitisipiti daa daa
 diipadaa
 more rows
-            </textarea>
-          </div>
+                </textarea>
+              </div>
+            </div>
+            <div class="slds-form-element">
+              <label class="slds-form-element__label">
+                <abbr title="required">*</abbr>
+                <span>Invoice Delivery Method</span>
+              </label>
+              <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                  <select class="slds-select" required>
+                    <option value="">select option</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Email">Email</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="slds-form-element">
-          <label class="slds-form-element__label">
-            <abbr title="required">*</abbr>
-            <span>Invoice Delivery Method</span>
-          </label>
-          <div class="slds-form-element__control">
-            <select required>
-              <option value="">select option</option>
-              <option value="Paper">Paper</option>
-              <option value="Email">Email</option>
-            </select>
+      </div>
+      <div class="oneContent">
+        This is the second form
+        <form name="second">
+          <div class="slds-form-element">
+            <label class="slds-form-element__label">
+              <abbr title="required">*</abbr>
+              Text input
+            </label>
+            <div class="slds-form-element__control">
+              <input type="text" value="Another foo" required>
+            </div>
           </div>
-        </div>
-      </form>
+          <div class="slds-form-element">
+            <label class="slds-form-element__label">Text area</label>
+            <div class="slds-form-element__control">
+              <textarea type="text">dippadaa</textarea>
+            </div>
+          </div>
+          <div class="slds-form-element">
+            <label class="slds-form-element__label">
+              <abbr title="required">*</abbr>
+              <span>Invoice Delivery Method</span>
+            </label>
+            <div class="slds-form-element__control">
+              <select required>
+                <option value="">select option</option>
+                <option value="Paper">Paper</option>
+                <option value="Email">Email</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="oneContent">
-      This is the second form
-      <form name="second">
-        <div class="slds-form-element">
-          <label class="slds-form-element__label">
-            <abbr title="required">*</abbr>
-            Text input
-          </label>
-          <div class="slds-form-element__control">
-            <input type="text" value="Another foo" required>
-          </div>
-        </div>
-        <div class="slds-form-element">
-          <label class="slds-form-element__label">Text area</label>
-          <div class="slds-form-element__control">
-            <textarea type="text">dippadaa</textarea>
-          </div>
-        </div>
-        <div class="slds-form-element">
-          <label class="slds-form-element__label">
-            <abbr title="required">*</abbr>
-            <span>Invoice Delivery Method</span>
-          </label>
-          <div class="slds-form-element__control">
-            <select required>
-              <option value="">select option</option>
-              <option value="Paper">Paper</option>
-              <option value="Email">Email</option>
-            </select>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</body>
+  </body>
+</html>

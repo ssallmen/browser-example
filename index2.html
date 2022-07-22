@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {background-color: powderblue;}
+      /* .maincontent {visibility: hidden;}
+      .active {visibility: hidden;}
+      .slds-form-element {visibility: hidden;} */
+      .slds-form-element__label {font-weight: bold;}
+      /* .slds-form-element__label {font-weight: bold; visibility: visible;}
+      .slds-form-element__control {visibility: hidden;}
+      select {visibility: visible;}
+      option {visibility: visible;}
+      textarea {visibility: visible;}
+      input {visibility: visible;} */
+      abbr[title="required"] {color: red;}
+      html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      html {
+        font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol');
+        font-size: 100%;
+        line-height: var(--lwc-varLineHeightText,1.5);
+        background: var(--lwc-brandBackgroundPrimary,rgb(238, 244, 255));
+        color: var(--lwc-colorTextDefault,rgb(24, 24, 24));
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      body {
+        font-size: var(--lwc-fontSize3,0.8125rem);
+        background: transparent;
+      }
+      :root {
+        --lwc-brandLightActive: rgba(241, 223, 249, 1);
+        --lwc-brandHeaderContrastWeakDisabled: rgba(145, 145, 145, 0.25);
+        --lwc-brandPrimaryTransparent10: rgba(198, 106, 249, 0.1);
+        --lwc-brandPrimary: rgba(198, 106, 249, 1);
+        --lwc-brandPrimaryActive: rgba(174, 45, 247, 1);
+        --lwc-brandHeader: rgba(255, 255, 255, 1);
+        --lwc-brandHeaderContrastCool: rgba(13, 112, 165, 1);
+        --lwc-brandLogoImage: url(/file-asset/telialogo?v=1&height=80&width=400);
+        --lwc-bannerUserDefaultImage: url(/file-asset/personbanu?v=1);
+        --lwc-brandLight: rgba(248, 241, 250, 1);
+        --lwc-brandDark: rgba(74, 6, 112, 1);
+        --lwc-colorBackgroundPathCompleteHover: rgba(107, 12, 158, 1);
+        --lwc-brandDarkActive: rgba(41, 2, 64, 1);
+        --lwc-colorBackgroundPathStepActionActive: rgba(141, 20, 207, 1);
+        --lwc-brandHeaderContrastInverse: rgba(255, 255, 255, 1);
+        --lwc-bannerGroupDefaultImage: url(/file-asset/groupbanu?v=1);
+        --lwc-colorBackgroundPathComplete: rgba(198, 106, 249, 1);
+        --lwc-colorBackgroundPathActiveHover: rgba(41, 2, 64, 1);
+        --lwc-brandPrimaryTransparent: rgba(198, 106, 249, 0.1);
+        --lwc-colorBorderPathCurrent: rgba(74, 6, 112, 1);
+        --lwc-brandPrimaryTransparent40: rgba(198, 106, 249, 0.4);
+        --lwc-brandTextLinkActive: rgba(107, 12, 158, 1);
+        --lwc-groupDefaultAvatarMedium: url(/file-asset/groupimage?v=1&height=160&width=160);
+        --lwc-brandHeaderContrastCoolActive: rgba(0, 97, 149, 1);
+        --lwc-colorBackgroundPathWon: rgba(74, 6, 112, 1);
+        --lwc-brandHeaderContrast: rgba(106, 106, 106, 1);
+        --lwc-userDefaultAvatarMedium: url(/file-asset/personimage?v=1&height=160&width=160);
+        --lwc-brandHeaderContrastWarm: rgba(214, 5, 1, 1);
+        --lwc-brandAccessible: rgba(141, 20, 207, 1);
+        --lwc-colorBorderPathCurrentHover: rgba(74, 6, 112, 1);
+        --lwc-colorTextPathCurrentHover: rgba(74, 6, 112, 1);
+        --lwc-colorBackgroundPathLost: rgba(74, 6, 112, 1);
+        --lwc-brandTextLink: rgba(141, 20, 207, 1);
+        --lwc-brandAccessibleActive: rgba(107, 12, 158, 1);
+        --lwc-brandHeaderContrastWeak: rgba(145, 145, 145, 1);
+        --lwc-groupDefaultAvatar: url(/file-asset/groupimage?v=1);
+        --lwc-brandBandDefaultImage: url(/file-asset/teliabanu?v=1);
+        --lwc-brandHeaderContrastInverseActive: rgba(238, 238, 238, 1);
+        --lwc-groupDefaultAvatarSmall: url(/file-asset/groupimage?v=1&height=96&width=96);
+        --lwc-colorBackgroundPathActive: rgba(74, 6, 112, 1);
+        --lwc-userDefaultAvatar: url(/file-asset/personimage?v=1);
+        --lwc-brandContrast: rgba(251, 245, 253, 1);
+        --lwc-brandBackgroundDarkTransparent: rgba(178, 115, 238, 0.0);
+        --lwc-brandBackgroundDark: rgba(178, 115, 238, 1);
+        --lwc-brandHeaderContrastActive: rgba(92, 92, 92, 1);
+        --lwc-colorBackgroundPathStepActionCurrent: rgba(141, 20, 207, 1);
+        --lwc-brandHeaderContrastWeakActive: rgba(129, 129, 129, 1);
+        --lwc-brandHeaderContrastWarmActive: rgba(194, 0, 0, 1);
+        --lwc-brandBackgroundPrimaryTransparent: rgba(195, 131, 255, 0.0);
+        --lwc-colorTextPathCurrent: rgba(74, 6, 112, 1);
+        --lwc-userDefaultAvatarSmall: url(/file-asset/personimage?v=1&height=96&width=96);
+        --lwc-brandBackgroundPrimary: rgba(195, 131, 255, 1);
+        --lwc-brandContrastActive: rgba(234, 227, 236, 1);
+      }
+      .slds-card {
+        position: relative;
+        padding-top: var(--slds-c-card-spacing-block-start, var(--sds-c-card-spacing-block-start, var(--sds-c-card-spacing-block, 0)));
+        padding-right: var(--slds-c-card-spacing-inline-end, var(--sds-c-card-spacing-inline-end, var(--sds-c-card-spacing-inline, 0)));
+        padding-bottom: var(--slds-c-card-spacing-block-end, var(--sds-c-card-spacing-block-end, var(--sds-c-card-spacing-block, 0)));
+        padding-left: var(--slds-c-card-spacing-inline-start, var(--sds-c-card-spacing-inline-start, var(--sds-c-card-spacing-inline, 0)));
+        background: var(--slds-c-card-color-background, var(--sds-c-card-color-background, var(--lwc-cardColorBackground,rgb(255, 255, 255))));
+        border-width: var(--slds-c-card-sizing-border, var(--sds-c-card-sizing-border, var(--lwc-borderWidthThin,1px)));
+        border-style: solid;
+        border-color: var(--slds-c-card-color-border, var(--sds-c-card-color-border, var(--lwc-cardColorBorder,rgb(201, 201, 201))));
+        border-radius: var(--slds-c-card-radius-border, var(--sds-c-card-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+        background-clip: padding-box;
+        box-shadow: var(--slds-c-card-shadow, var(--sds-c-card-shadow, var(--lwc-cardShadow,0 2px 2px 0 rgba(0, 0, 0, 0.10))));
+        color: var(--slds-c-card-text-color, var(--sds-c-card-text-color));
+      }
+      ol, ul {
+        list-style: none;
+      }
+      .slds-accordion__content {
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+      }
+      .slds-is-open>.slds-accordion__content {
+        overflow: visible;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+      }
+      .slds-select_container {
+        position: relative;
+        color: var(--sds-c-select-text-color);
+      }
+      button, input, optgroup, select, textarea {
+        color: inherit;
+        font: inherit;
+        margin: 0;
+      }
+      button, select {
+        text-transform: none;
+      }
+      .slds-select {
+        height: calc(var(--lwc-heightInput,1.875rem) + (var(--lwc-borderWidthThin,1px) * 2));
+        width: 100%;
+        border: var(--lwc-borderWidthThin,1px) solid var(--slds-c-select-color-border, var(--sds-c-select-color-border, var(--lwc-colorBorderInput,rgb(201, 201, 201))));
+        border-radius: var(--slds-c-select-radius-border, var(--sds-c-select-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+        background-color: var(--slds-c-select-color-background, var(--sds-c-select-color-background, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))));
+        color: var(--slds-c-select-text-color, var(--sds-c-select-text-color));
+        box-shadow: var(--slds-c-select-shadow, var(--sds-c-select-shadow));
+        transition: border var(--lwc-durationQuickly,0.1s) linear,background-color var(--lwc-durationQuickly,0.1s) linear;
+      }
+      .slds-select:required {
+        box-shadow: none;
+      }
+      .slds-select_container .slds-select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding-left: var(--lwc-spacingXSmall,0.5rem);
+        padding-right: var(--lwc-spacingLarge,1.5rem);
+      }
+      .slds-select_container:before, .slds-select_container:after {
+          position: absolute;
+          content: '';
+          display: none;
+          right: var(--lwc-spacingXSmall,0.5rem);
+          width: 0;
+          height: 0;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          pointer-events: none;
+      }
+      *, *:before, *:after {
+        box-sizing: border-box;
+      }
+      ::selection {
+        background: var(--lwc-colorBackgroundSelection,rgb(216, 230, 254));
+        text-shadow: none;
+        color: var(--lwc-colorTextDefault,rgb(24, 24, 24));
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="desktop container forceStyle oneOne navexDesktopLayoutContainer lafAppLayoutHost forceAccess tablet">
+      <div class="none navexStandardManager">
+        <div class="fullheight center oneCenterStage mainContentMark">
+          <div class="maincontent">
+            <div class="contentArea fullheight">
+              <div class="slds-brand-band slds-brand-band_cover slds-brand-band_medium slds-template_default">
+                <div class="slds-template__container">
+                  <div class="center oneCenterStage lafSinglePaneWindowManager">
+                    <div class="windowViewMode-normal oneContent active lafPageHost">
+                      <article class="slds-card">
+                        <div class="slds-card__body">
+                          <div>
+                            <ul class="slds-accordion ">
+                              <div class="slds-grid slds-grid_align-spread slds-grid_vertical-stretch slds-wrap">
+                                <li class="slds-accordion__list-item slds-size--12-of-12">
+                                  <section class="slds-accordion__section slds-is-open">
+                                    <div class="slds-accordion__content">
+                                      <div class="slds-p-top_small slds-p-left_medium slds-col slds-size_4-of-12">
+                                        <div class="slds-form-element custom-select_container is-required">
+                                          <label class="slds-form-element__label">
+                                            <abbr title="required">*</abbr>
+                                            Text input
+                                          </label>
+                                          <div class="slds-form-element__control">
+                                            <input type="text" value="Foobar" required>
+                                          </div>
+                                        </div>
+                                        <div class="slds-form-element custom-select_container is-required">
+                                          <label class="slds-form-element__label">Text area</label>
+                                          <div class="slds-form-element__control">
+                                            <textarea type="text">dipitisipiti daa daa
+diipadaa
+more rows
+                                            </textarea>
+                                          </div>
+                                        </div>
+                                        <div class="slds-form-element custom-select_container is-required">
+                                          <label class="slds-form-element__label">
+                                            <abbr title="required" class="slds-required">*</abbr>
+                                            <span>Invoice Delivery Method</span>
+                                          </label>
+                                          <div class="slds-form-element__control slds-grow">
+                                            <div class="slds-select_container">
+                                              <select class="slds-select" name="deliveryMethod" required>
+                                                <option value="">select option</option>
+                                                <option value="Email Invoice">Email Invoice</option>
+                                                <option value="Paper Invoice">Paper Invoice</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </section>
+                                </li>
+                              </div>
+                            </ul>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+  

@@ -5,7 +5,7 @@ def chain_selectors(selectorList, **formatters):
 
 _locators = {
   'activeView': 'div.maincontent div.oneContent.active',
-  'form': 'form[name="{formName}"]',
+  'cardBody': '.slds-card__body',
   'field': '.slds-form-element:has(.slds-form-element__label:text-is("{fieldName}"),.slds-form-element__label :text-is("{fieldName}")) .slds-form-element__control',
   'input': 'input',
   'textarea': 'textarea',
@@ -21,7 +21,7 @@ class Page:
     return self.builtin.get_library_instance('Browser')
 
   def get_field_value(self, fieldName):
-    selector = chain_selectors([_locators['activeView'], _locators['field'], f"{_locators['input']},{_locators['textarea']},{_locators['selectedOption']}"], fieldName=fieldName)
+    selector = chain_selectors([_locators['activeView'], _locators['cardBody'], _locators['field'], f"{_locators['input']},{_locators['textarea']},{_locators['selectedOption']}"], fieldName=fieldName)
     self.builtin.log_to_console(f'\n{fieldName} selector: {selector}')
     element = self.browser.get_element(selector)
     states = self.browser.get_element_states(element)
